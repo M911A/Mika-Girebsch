@@ -3,6 +3,8 @@
 :root {
     --background: #ffffff;
     --font: rgb(15, 18, 25);
+    --accent-background: #F5F5F7;
+    --accent-background-2: #E4E4E6;
     --accent: #2337ff;
     --accent-dark: #000d8a;
     --black: 15, 18, 25;

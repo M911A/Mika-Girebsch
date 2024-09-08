@@ -1,0 +1,125 @@
+<div class="container-work">
+    <h1 class="container-header">PROJEKTE</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="/public/Rossner.png">
+            <div class="description">
+                <div class="left">
+                    <a class="header">
+                        DR. DAGMAR ROßNER
+                    </a>
+                    <p class="subheader">
+                        Webauftritt
+                    </p>
+                </div>
+                <div class="right">
+                    <p class="time-button">2024</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card hover-image">
+            <img src="/public/Wildhandel.png">
+            <div class="description">
+                <div class="left">
+                    <a class="header">
+                        FLÄMING WILDHANDEL
+                    </a>
+                    <p class="subheader">
+                        Webauftritt
+                    </p>
+                </div>
+                <div class="right">
+                    <p class="time-button">2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container-work {
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        opacity: 0; 
+        transition: opacity 0.5s ease-out; 
+    }
+
+    .container-work.visible {
+        opacity: 1; 
+    }
+
+    .container-header {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 48.5%;
+        background-color: var(--accent-background);
+    }
+
+    .card img {
+        border-radius: 0;
+    }
+
+    .card {
+        border: 2px solid var(--accent-background);
+        border-radius: 30px;
+    }
+
+    .hover-image {
+        position: relative;
+    }
+    .description {
+        padding: 20px 20px 0px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header {
+        color: var(--font);
+        font-weight: 700;
+        font-size: 25px;
+        padding: 0;
+    }
+
+    .subheader {
+        margin-top: -5px;
+    }
+
+    .time-button {
+        background-color: var(--accent-background-2);
+        border-radius: 12px;
+        width: fit-content;
+        padding: 5px 15px;
+    }
+</style>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.container-work');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    container.classList.add('visible');
+                } else {
+                    container.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.75 
+        });
+
+        observer.observe(container);
+    });
+</script>
