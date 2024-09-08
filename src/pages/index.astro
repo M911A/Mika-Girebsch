@@ -9,62 +9,53 @@ import About from '../components/About.astro';
 
 <!doctype html>
 <html lang="de">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div class="ultra-header header">
-				<p class="ultra-header outlined-text">MIKA</p>
-				<p class="ultra-header outlined-text">GRIEBSCH</p>
-			</div>
-			<div class="arrow-container">
-				<img class="arrow-image" src="/public/arrowdown.svg">
-			</div>
-		</main>
-		<About />
-		<!-- <img src="/public/eins.jpg"> -->
-		<Test />
-		<img src="/public/eins.jpg">
-	</body>
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+</head>
+<body>
+    <Header />
+    <main>
+        <div class="ultra-header header">
+            <p class="ultra-header outlined-text">MIKA</p>
+            <p class="ultra-header outlined-text">GRIEBSCH</p>
+        </div>
+        <div class="arrow-container">
+            <img class="arrow-image" src="/public/arrowdown.svg" alt="Arrow Down">
+        </div>
+    </main>
+    <About />
+    <Test />
+    <img src="/public/eins.jpg" alt="Eins">
+</body>
 </html>
 
 <style>
-	.header {
-		height: 77vh;
-	}
-	.arrow-container {
-		display: flex;
-		justify-content: center;
-	}
-	.arrow-image {
-		height: 50px;
-		width: auto;
-		animation: jumping-arrow 1s ease-in-out infinite;  
-	}
-	@keyframes jumping-arrow {
-		0% {
-			transform: translateY(0);
-		}
-		50% {
-			transform: translateY(-10px);
-		}
-		100% {
-			transform: translateY(0);
-		}
-	}
+    .header {
+        height: 77vh;
+    }
+    .arrow-container {
+        display: flex;
+        justify-content: center;
+    }
+    .arrow-image {
+        height: 50px;
+        width: auto;
+        animation: jumping-arrow 1s ease-in-out infinite;  
+    }
+    @keyframes jumping-arrow {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+	body {
+    cursor: url('/public/cursor.png') 32 32, auto; /* 32 32 ist der Hotspot des Cursors */
+}
 </style>
 
-<script>
-	// Füge den Cursor zum Dokument hinzu
-	const cursor = document.createElement('div');
-	cursor.classList.add('custom-cursor');
-	document.body.appendChild(cursor);
-
-	// Bewege den Cursor mit der Maus
-	document.addEventListener('mousemove', (e) => {
-		cursor.style.left = e.pageX + 'px';
-		cursor.style.top = e.pageY + 'px';
-	});
-</script>
