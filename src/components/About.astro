@@ -1,0 +1,77 @@
+<main>
+    <div class="container hidden">
+        <h1>01 ABOUT</h1>
+        <div class="row">
+            <div class="left">
+                Früh interessierte ich mich für die Programmierung und entdeckte anfangs verschiedenste Programmiersprachen wie Java und Python.
+                Durch mein damaliges alter von 13 Jahren interessierte ich mich aber besonders für die Webentwicklung, aufgrund der optischen erkennbaren Fortschritte.<br>
+                Mit fortschreitendem Alter erweiterten sich die Projekte bis hin zu fertigen Websites. (siche Homepage)<br>
+                Früh interessierte ich mich für die Programmierung und entdeckte anfangs verschiedenste Programmiersprachen wie Java und Python.
+                Durch mein damaliges alter von 13 Jahren interessierte ich mich aber besonders für die Webentwicklung, aufgrund der optischen erkennbaren Fortschritte.<br>
+                Mit fortschreitendem Alter erweiterten sich die Projekte bis hin zu fertigen Websites. (siche Homepage)
+            </div>
+            <div class="right">
+                <img src="/public/portrait.jpg" alt="Portrait">
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+    .container {
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: column;
+        opacity: 0; /* Initial unsichtbar */
+        transition: opacity 0.7s ease; /* Übergangseffekt für Sichtbarkeit */
+    }
+    .container.visible {
+        opacity: 1; /* Sichtbar, wenn die Klasse hinzugefügt wird */
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+    .left, .right {
+        padding: 2vw;
+    }
+    .left {
+        text-align: justify;
+        width: 60%;
+    }
+    .right {
+        width: 40%;
+    }
+    .right img {
+        width: 100%; /* Setzt die Breite auf 100% des Container-Bereichs */
+        height: auto; /* Beibehaltung der Bildhöhe entsprechend der Breite */
+    }
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.container');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    container.classList.add('visible');
+                } else {
+                    container.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.6 // 1.0 bedeutet, dass 100% des Elements sichtbar sein müssen
+        });
+
+        observer.observe(container);
+    });
+</script>

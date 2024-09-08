@@ -1,0 +1,165 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header>
+    <nav>
+        <p class="outlined-text-small">=^._.^=</p>
+        <img src="/public/menu-svgrepo-com.svg" id="menu-image" onclick="openMenu()">
+        <p class="outlined-text-small">U･ｪ･U</p>
+    </nav>
+    <div id="menu">
+        <div>
+            <a class="header-link outlined-text">HOME</a>
+            <a class="header-link outlined-text">ABOUT</a>
+            <a class="header-link outlined-text">PROJECTS</a>
+            <a class="header-link outlined-text">CONTACT</a>
+        </div>
+    </div>
+</header>
+
+<style>
+    header {
+        margin: 0;
+        padding: 15px 30px;
+        background: white;
+        border-bottom: 8px solid var(--font);
+        overflow: hidden; /* Verhindert, dass der Inhalt aus dem Header herausragt */
+        position: relative; /* Für das absolute Positionieren der Overlay */
+        transition: height 0.8s ease; /* Übergang zur Änderung der Höhe */
+    }
+    #menu-image {
+        cursor: pointer; /* Mauszeiger ändern */
+        width: 64px; /* Breite des Icons */
+        height: 44px; /* Höhe des Icons */
+    }
+    #menu {
+        margin-top: 30vh;
+        display: none; /* Anfangs verstecken */
+        padding: 20px;
+        margin-left: 30%;
+        width: 40%;
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+	nav {
+		p {
+			font-weight: 700;
+		}
+	}
+    /* Das Menü soll im Header angezeigt werden, wenn dieser erweitert wird */
+    .header-expanded #menu {
+        display: block; /* Menü sichtbar, wenn Header erweitert ist */
+    }
+    @keyframes slide-in {
+        0% {
+            height: 60px; /* Starthöhe des Headers */
+        }
+        100% {
+            height: 100vh; /* Endhöhe des Headers */
+        }
+    }
+    @keyframes slide-out {
+        0% {
+            height: 100vh; /* Starthöhe des Headers */
+        }
+        100% {
+            height: 60px; /* Endhöhe des Headers */
+        }
+    }
+    
+    .header-expanded {
+        animation: slide-in 0.8s forwards; /* Animation für das Öffnen */
+    }
+    .header-collapsed {
+        animation: slide-out 0.8s forwards; /* Animation für das Schließen */
+    }
+    
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    nav p {
+        margin: 0;
+    }
+    .header-link {
+        font-size: 120px;
+        font-weight: 700;
+        color: var(--font);
+        font-style: normal;
+        font-variant: normal;
+        text-transform: uppercase;
+        text-decoration: none solid rgb(29, 29, 31);
+        text-align: start;
+        text-indent: 0px;
+        line-height: 94px;
+        vertical-align: baseline;
+        letter-spacing: -3.2px;
+        word-spacing: 0px;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .outlined-text {
+        position: relative;
+        display: inline; /* Damit der Text inline bleibt */
+        text-shadow: 
+            -1px -1px 0 var(--font),  
+            1px -1px 0 var(--font),
+            -1px 1px 0 var(--font),
+            1px 1px 0 var(--font); /* Die Umrandung der Buchstaben */
+        transition: color 0.3s ease; /* Weicher Übergangseffekt für die Textfarbe */
+    }
+
+    .outlined-text:hover {
+        color: white; /* Textfarbe beim Hover auf weiß setzen */
+        text-shadow: 
+			-3px -3px 0 var(--font),  
+            1px -1px 0 var(--font),
+            -1px 1px 0 var(--font),
+            1px 1px 0 var(--font); /* Die Umrandung bleibt sichtbar */
+    }
+	.outlined-text-small {
+        position: relative;
+        display: inline; /* Damit der Text inline bleibt */
+        text-shadow: 
+            0px 0px 0 var(--font),  
+            0px 0px 0 var(--font),
+            0px 0px 0 var(--font),
+            0px 0px 0 var(--font); /* Die Umrandung der Buchstaben */
+        transition: color 0.3s ease; /* Weicher Übergangseffekt für die Textfarbe */
+    }
+
+    .outlined-text-small:hover {
+        color: white; /* Textfarbe beim Hover auf weiß setzen */
+        text-shadow: 
+			-3px -3px 0 var(--font),  
+            1px -1px 0 var(--font),
+            -1px 1px 0 var(--font),
+            1px 1px 0 var(--font); /* Die Umrandung bleibt sichtbar */
+    }
+</style>
+
+<script>
+    function openMenu() {
+        const header = document.querySelector('header');
+        if (header.classList.contains('header-expanded')) {
+            header.classList.remove('header-expanded');
+            header.classList.add('header-collapsed'); // Animation für Schließen
+        } else {
+            header.classList.remove('header-collapsed');
+            header.classList.add('header-expanded'); // Animation für Öffnen
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuImage = document.getElementById('menu-image');
+        menuImage.addEventListener('click', () => {
+            openMenu();
+        });
+    });
+</script>

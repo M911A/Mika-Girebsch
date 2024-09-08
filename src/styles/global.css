@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+	--background: #ffffff;
+	--font: rgb(15, 18, 25);
+	--accent: #2337ff;
+	--accent-dark: #000d8a;
+	--black: 15, 18, 25;
+	--gray: 96, 115, 159;
+	--gray-light: 229, 233, 240;
+	--gray-dark: 34, 41, 57;
+	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
+	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+		0 16px 32px rgba(var(--gray), 33%);
+}
+.instrument-sans {
+	font-family: "Instrument Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+body {
+	font-family: 'Instrument Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	background-color: var(--background);
+	background-size: 100% 600px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	color: rgb(var(--gray-dark));
+	font-size: 20px;
+	line-height: 1.7;
+	/* cursor: none; */
+}
+main {
+	width: 80%;
+	margin: auto;
+	padding: 3em 1em;
+	cursor: none;
+}
+.ultra-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-size: 13rem;
+	font-weight: 600;
+	color: var(--font);
+}
+
+.ultra-header p {
+	line-height: 1;
+	margin: 0;
+}
+
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: var(--font); /* Standardfarbe Schwarz */
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 0.5rem 0;
+	color: rgb(var(--black));
+	line-height: 1.2;
+}
+h1 {
+	font-size: 5.052em;
+}
+h2 {
+	font-size: 2.441em;
+}
+h3 {
+	font-size: 1.953em;
+}
+h4 {
+	font-size: 1.563em;
+}
+h5 {
+	font-size: 1.25em;
+}
+strong,
+b {
+	font-weight: 700;
+}
+a {
+	color: var(--accent);
+}
+a:hover {
+	color: var(--accent);
+}
+p {
+	margin-bottom: 1em;
+}
+.prose p {
+	margin-bottom: 2em;
+}
+textarea {
+	width: 100%;
+	font-size: 16px;
+}
+input {
+	font-size: 16px;
+}
+table {
+	width: 100%;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+code {
+	padding: 2px 5px;
+	background-color: rgb(var(--gray-light));
+	border-radius: 2px;
+}
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+pre > code {
+	all: unset;
+}
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding: 0 0 0 20px;
+	margin: 0px;
+	font-size: 1.333em;
+}
+hr {
+	border: none;
+	border-top: 1px solid rgb(var(--gray-light));
+}
+@media (max-width: 720px) {
+	body {
+		font-size: 18px;
+	}
+	main {
+		padding: 1em;
+	}
+}
+
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.outlined-text {
+	position: relative;
+	display: inline; /* Damit der Text inline bleibt */
+	text-shadow: 
+		-1px -1px 0 var(--font),  
+		1px -1px 0 var(--font),
+		-1px 1px 0 var(--font),
+		1px 1px 0 var(--font); /* Die Umrandung der Buchstaben */
+	transition: color 0.3s ease; /* Weicher Übergangseffekt für die Textfarbe */
+}
+
+.outlined-text:hover {
+	color: white; /* Textfarbe beim Hover auf weiß setzen */
+	text-shadow: 
+		-5px -5px 0 var(--font),  
+		1px -1px 0 var(--font),
+		-1px 1px 0 var(--font),
+		1px 1px 0 var(--font); /* Die Umrandung bleibt sichtbar */
+}
