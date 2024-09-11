@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import About from '../components/About.astro';
 import Work from '../components/Work.astro';
+import Contact from '../components/Contact.astro'; 
 ---
 
 <!doctype html>
@@ -27,6 +28,7 @@ import Work from '../components/Work.astro';
     <About />
     <Work />
     <img src="/public/eins.jpg">
+    <Contact />
 </body>
 </html>
 
@@ -54,8 +56,5 @@ import Work from '../components/Work.astro';
             transform: translateY(0);
         }
     }
-	body {
-    cursor: url('/public/cursor.png') 32 32, auto; /* 32 32 ist der Hotspot des Cursors */
-}
 </style>
 

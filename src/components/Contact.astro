@@ -1,0 +1,118 @@
+<main id="contact">
+    <div class="contact-container">
+        <div class="left">
+            <img class="element-1" src="/public/strava-icon.svg">
+            <img class="element-2" src="/public/github.svg">
+            <img class="element-3" src="/public/linkedin.svg">
+            <img class="element-4" src="/public/instagram.svg">
+        </div>
+        <div class="middel">
+            <h1 class="container-header outlined-text-active">Mika Griebsch</h1>
+            <table>
+                <tr>
+                    <td class="td-img">
+                        <img src="/public/home.svg">
+                    </td>
+                    <td>
+                        <p>Bardenitzer Drofstr. 56</p>
+                        <p>14929 Treuenbrietzen</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-img">
+                        <img src="/public/at.svg"> 
+                    </td>
+                    <td>
+                        <p>mika.griebsch@gmail.com</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-img">
+                        <img src="/public/phone.svg">
+                    </td>
+                    <td>
+                        <p>+49 123-456789</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <img class="element-3" src="/public/linkedin.svg">
+            <img class="element-4" src="/public/instagram.svg">
+        </div>
+    </div>
+</main>
+
+<style>
+    .contact-container {
+        display: flex;
+        flex-direction: row;
+    }
+    .left, .right {
+        width: 20%;
+
+        position: relative;
+    }
+    .left img, .right img {
+        width: 70px;
+        height: auto;
+    }
+    .left img:hover, .right img:hover {
+        animation: buncing 2.5s ease forwards;
+    }
+    .middel {
+        width: 60%;
+    }
+    table {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    table td {
+        vertical-align: middle;
+    }
+    table td p {
+        margin: 0;
+        padding: 0;
+    }
+    table td img {
+        height: 30px;
+        padding-top: 10px;
+        display: inline-block;
+    }
+    .td-img {
+        text-align: center;
+        width: 50px;
+    }
+    @keyframes buncing {
+        0% {
+            width: 75px;
+        }
+        50% {
+            width: 60px;
+        }
+        100% {
+            width: 70px;
+        }
+    }
+    .element-1 {
+        position: absolute;
+        top: 15%;
+        left: 50%; 
+    }
+    .element-2 {
+        position: absolute;
+        top: 75%;
+        left: 20%; 
+    }
+    .element-3 {
+        position: absolute;
+        top: 40%;
+        left: 10%; 
+    }
+    .element-4 {
+        position: absolute;
+        top: 60%;
+        left: 45%; 
+    }
+    /* TODO:das ist mega hässlich !!! */
+</style>
