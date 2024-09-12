@@ -1,41 +1,125 @@
 <main> 
+    <h1 class="container-header outlined-text-active">SKILLS</h1>
     <div class="tool-container">
         <div class="tool-card">
-            <p class="tool-description">Astro Framwork</p>
             <img class="tool-icon" src="/public/Astro.svg">
+            <p class="tool-description">Astro Framework</p>
         </div>
         <div class="tool-card">
-            <p class="tool-description">Astro Framwork</p>
-            <img class="tool-icon" src="/public/Astro.svg">
+            <img class="tool-icon" src="/public/html.svg">
+            <p class="tool-description">HTML</p>
         </div>
         <div class="tool-card">
-            <p class="tool-description">Astro Framwork</p>
-            <img class="tool-icon" src="/public/Astro.svg">
+            <img class="tool-icon" src="/public/css.svg">
+            <p class="tool-description">CSS</p>
+        </div>
+        <div class="tool-card">
+            <img class="tool-icon" src="/public/js.svg">
+            <p class="tool-description">JavaScript</p>
+        </div>
+        <div class="tool-card">
+            <img class="tool-icon" src="/public/java.svg">
+            <p class="tool-description">Java</p>
+        </div>
+        <div class="tool-card">
+            <img class="tool-icon" src="/public/python.svg">
+            <p class="tool-description">Python</p>
+        </div>
+        <div class="tool-card">
+            <img class="tool-icon" src="/public/django.svg">
+            <p class="tool-description">Django Framework</p>
+        </div>
+        <div class="tool-card">
+            <img class="tool-icon" src="/public/swift.svg">
+            <p class="tool-description">Swift UI</p>
         </div>
     </div>
 </main>
 
 <style>
     .tool-container {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 18vw);
+        gap: 1rem;
+        justify-content: center;
         width: 100%;
     }
+
     .tool-card {
         display: flex;
-        flex-direction: row-reverse;
-        /* justify-content: space-evenly; */
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
         border-radius: 12px;
-        height: fit-content;
-        width: 20vw;
-        margin: 1%;
-        padding: 1%;
+        padding: 2% 2%;
         background-color: var(--accent-background);
+        opacity: 0; /* Start invisible */
+        transform: translateX(0); /* Initial position */
+        transition: opacity 0.5s, transform 0.5s;
     }
+
     .tool-icon {
-        height: 10vh;
-        display: flex;
-        justify-content: flex-start !important;
-        left: 0px;
+        height: 7vh;
+        margin-right: 5%;
+    }
+
+    @keyframes slideInFromLeft {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .tool-card.animate-left {
+        animation: slideInFromLeft 0.5s forwards;
+    }
+
+    .tool-card.animate-right {
+        animation: slideInFromRight 0.5s forwards;
+    }
+
+    @media (max-width: 1000px) {
+        .tool-container {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
     }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.tool-card');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.9
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    
+                    const animationClass = index % 2 === 0 ? 'animate-left' : 'animate-right';
+                    entry.target.classList.add(animationClass);
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        cards.forEach(card => observer.observe(card));
+    });
+</script>

@@ -1,45 +1,48 @@
-<div class="container-work" id="projects" >
-    <h1 class="container-header outlined-text-active">PROJEKTE</h1>
-    <div class="card-container">
-        <div class="card">
-            <a target="_blank" href="https://frauenarzt-dr-dagmar-rossner.de/">
-                <img src="/public/Rossner.png">
-            </a>
-            <div class="description">
-                <div class="left">
-                    <a target="_blank" href="https://frauenarzt-dr-dagmar-rossner.de/" class="header">
-                        DR. DAGMAR ROßNER
-                    </a>
-                    <p class="subheader">
-                        Webauftritt
-                    </p>
-                </div>
-                <div class="right">
-                    <p class="time-button">2024</p>
+<main>
+
+    <div class="container-work" id="projects" >
+        <h1 class="container-header outlined-text-active">PROJEKTE</h1>
+        <div class="card-container">
+            <div class="card">
+                <a target="_blank" href="https://frauenarzt-dr-dagmar-rossner.de/">
+                    <img src="/public/Rossner.png">
+                </a>
+                <div class="description">
+                    <div class="left">
+                        <a target="_blank" href="https://frauenarzt-dr-dagmar-rossner.de/" class="header">
+                            DR. DAGMAR ROßNER
+                        </a>
+                        <p class="subheader">
+                            Webauftritt
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p class="time-button">2024</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    
-        <div class="card hover-image">
-            <a target="_blank" href="https://www.flaeming-wildhandel.de/">
-                <img src="/public/Wildhandel.png">
-            </a>
-            <div class="description">
-                <div class="left">
-                    <a target="_blank" href="hhttps://www.flaeming-wildhandel.de/" class="header">
-                        FLÄMING WILDHANDEL
-                    </a>
-                    <p class="subheader">
-                        Webauftritt
-                    </p>
-                </div>
-                <div class="right">
-                    <p class="time-button">2023</p>
+        
+            <div class="card hover-image">
+                <a target="_blank" href="https://www.flaeming-wildhandel.de/">
+                    <img src="/public/Wildhandel.png">
+                </a>
+                <div class="description">
+                    <div class="left">
+                        <a target="_blank" href="hhttps://www.flaeming-wildhandel.de/" class="header">
+                            FLÄMING WILDHANDEL
+                        </a>
+                        <p class="subheader">
+                            Webauftritt
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p class="time-button">2023</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</main>
 
 <style>
     .container-work {
@@ -103,10 +106,12 @@
         width: fit-content;
         padding: 5px 15px;
     }
-    @media (max-width: 720px) {
+    @media (max-width: 1100px) {
         .card-container {
             display: flex;
             flex-direction: column;
+            margin-left: 1%;
+            margin-right: 1%;
         }
         .card {
             width: 100%;
@@ -134,7 +139,7 @@
                 }
             });
         }, {
-            threshold: 0.75 
+            threshold: 0.5
         });
 
         observer.observe(container);
