@@ -1,0 +1,41 @@
+<main> 
+    <div class="tool-container">
+        <div class="tool-card">
+            <p class="tool-description">Astro Framwork</p>
+            <img class="tool-icon" src="/public/Astro.svg">
+        </div>
+        <div class="tool-card">
+            <p class="tool-description">Astro Framwork</p>
+            <img class="tool-icon" src="/public/Astro.svg">
+        </div>
+        <div class="tool-card">
+            <p class="tool-description">Astro Framwork</p>
+            <img class="tool-icon" src="/public/Astro.svg">
+        </div>
+    </div>
+</main>
+
+<style>
+    .tool-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .tool-card {
+        display: flex;
+        flex-direction: row-reverse;
+        /* justify-content: space-evenly; */
+        border-radius: 12px;
+        height: fit-content;
+        width: 20vw;
+        margin: 1%;
+        padding: 1%;
+        background-color: var(--accent-background);
+    }
+    .tool-icon {
+        height: 10vh;
+        display: flex;
+        justify-content: flex-start !important;
+        left: 0px;
+    }
+</style>

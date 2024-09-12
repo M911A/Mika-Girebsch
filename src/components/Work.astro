@@ -87,7 +87,6 @@
         flex-direction: row;
         justify-content: space-between;
     }
-
     .header {
         color: var(--font);
         font-weight: 700;
@@ -95,16 +94,29 @@
         padding: 0;
         text-decoration: none;
     }
-
     .subheader {
         margin-top: -5px;
     }
-
     .time-button {
         background-color: var(--accent-background-2);
         border-radius: 12px;
         width: fit-content;
         padding: 5px 15px;
+    }
+    @media (max-width: 720px) {
+        .card-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .card {
+            width: 100%;
+            margin: 2vh 0vh 0vh 0vh;
+        }
+        .container-header {
+        display: flex;
+        margin-left: 1%;
+        font-size: 16vw;
+        }   
     }
 </style>
 

@@ -238,3 +238,10 @@ hr {
     clip-path: inset(50%);
     white-space: nowrap;
 }
+@media (max-width: 720px) {
+    .container-header {
+        display: flex;
+        margin-left: 1%;
+        font-size: 16vw;
+        }
+}
