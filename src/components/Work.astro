@@ -1,5 +1,4 @@
 <main>
-
     <div class="container-work" id="projects" >
         <h1 class="container-header outlined-text-active">PROJEKTE</h1>
         <div class="card-container">
@@ -28,7 +27,7 @@
                 </a>
                 <div class="description">
                     <div class="left">
-                        <a target="_blank" href="hhttps://www.flaeming-wildhandel.de/" class="header">
+                        <a target="_blank" href="https://www.flaeming-wildhandel.de/" class="header">
                             FLÄMING WILDHANDEL
                         </a>
                         <p class="subheader">
@@ -59,7 +58,8 @@
 
     .container-header {
         display: flex;
-        margin-left: 61%;
+        /* margin-left: 61%; */
+        margin-left: -3%;
     }
 
     .card-container {
@@ -109,7 +109,7 @@
     @media (max-width: 1100px) {
         .card-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: column-reverse !important;
             margin-left: 1%;
             margin-right: 1%;
         }
@@ -122,9 +122,13 @@
         margin-left: 1%;
         font-size: 16vw;
         }   
+        .container-work {
+            h1 {
+            margin-left: -20px;
+        }
+        }
     }
 </style>
-
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {

@@ -1,35 +1,37 @@
-<main id="contact">
+<main class="contact-container-main" id="contact">
+    <h1 class="container-header outlined-text-active">Mika Griebsch</h1>
     <div class="contact-container">
         <div class="left">
-            <img class="element-1" src="/public/strava-icon.svg">
-            <img class="element-2" src="/public/github.svg">
-            <img class="element-3" src="/public/linkedin.svg">
-            <img class="element-4" src="/public/instagram.svg">
+            <a target="_blank" href="https://www.strava.com/athletes/103508371" >
+                <img class="element-1" src="/public/strava-icon.svg">
+            </a>
+            <a target="_blank" href="https://github.com/M911A" >
+                <img class="element-2" src="/public/github.svg">
+            </a>
         </div>
         <div class="middel">
-            <h1 class="container-header outlined-text-active">Mika Griebsch</h1>
             <table>
                 <tr>
-                    <td class="td-img">
+                    <!-- <td class="td-img">
                         <img src="/public/home.svg">
-                    </td>
+                    </td> -->
                     <td>
-                        <p>Bardenitzer Drofstr. 56</p>
+                        <p>Bardenitzer Drofstr. 56,</p>
                         <p>14929 Treuenbrietzen</p>
                     </td>
                 </tr>
                 <tr>
-                    <td class="td-img">
+                    <!-- <td class="td-img">
                         <img src="/public/at.svg"> 
-                    </td>
+                    </td> -->
                     <td>
                         <p>mika.griebsch@gmail.com</p>
                     </td>
                 </tr>
                 <tr>
-                    <td class="td-img">
+                    <!-- <td class="td-img">
                         <img src="/public/phone.svg">
-                    </td>
+                    </td> -->
                     <td>
                         <p>+49 123-456789</p>
                     </td>
@@ -37,38 +39,52 @@
             </table>
         </div>
         <div class="right">
-            <img class="element-3" src="/public/linkedin.svg">
-            <img class="element-4" src="/public/instagram.svg">
+            <a target="_blank" href="https://www.linkedin.com/in/mika-griebsch-4a31a7328/">
+                <img class="element-3" src="/public/linkedin.svg">
+            </a>
+            <a target="_blank" href="https://www.instagram.com/mika_griebsch/">
+                <img class="element-4" src="/public/instagram.svg">
+            </a>
         </div>
     </div>
 </main>
+<div class="more ">
+    <h2 class="container-header outlined-text" >more, coming soon</h2>
+</div>
 
 <style>
+    .more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .contact-container {
         display: flex;
         flex-direction: row;
     }
     .left, .right {
-        width: 20%;
-
+        width: 30%;
         position: relative;
+        /* background-color: aqua; */
     }
     .left img, .right img {
         width: 70px;
         height: auto;
     }
-    .left img:hover, .right img:hover {
-        animation: buncing 2.5s ease forwards;
+    @keyframes grow {
+        100% {
+            width: 90px;
+            height: 90px;
+        }
     }
     .middel {
-        width: 60%;
-    }
-    table {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        width: 40%;
+        height: fit-content;
     }
     table td {
         vertical-align: middle;
+        display: flex;
+        justify-content: center;
     }
     table td p {
         margin: 0;
@@ -83,36 +99,157 @@
         text-align: center;
         width: 50px;
     }
-    @keyframes buncing {
+    @keyframes moving1 {
         0% {
-            width: 75px;
+            transform: translate(0, 0);
+            height: 70px;
+            width: auto;
+        }
+        25% {
+            transform: translate(-5px, -5px);
+            height: 85px;
+            width: auto;
         }
         50% {
-            width: 60px;
+            transform: translate(10px, 5px);
+            height: 60px;
+            width: auto;
+        }
+        75% {
+            transform: translate(-5px, 5px);
+            height: 85px;
+            width: auto;
         }
         100% {
-            width: 70px;
+            transform: translate(0px, 0px);
+            height: 70px;
+            width: auto;
+        }
+    }
+    @keyframes moving2 {
+        0% {
+            transform: translate(0, 0);
+        }
+        25% {
+            transform: translate(5px, 5px);
+        }
+        50% {
+            transform: translate(-5px, -10px);
+        }
+        75% {
+            transform: translate(5px, -5px);
+        }
+        100% {
+            transform: translate(0px, 0px);
+        }
+    }
+    @keyframes moving3 {
+        0% {
+            transform: translate(0, 0);
+        }
+        25% {
+            transform: translate(15px, 5px);
+        }
+        50% {
+            transform: translate(-5px, -10px);
+        }
+        75% {
+            transform: translate(5px, -10px);
+        }
+        100% {
+            transform: translate(0px, 0px);
         }
     }
     .element-1 {
         position: absolute;
         top: 15%;
-        left: 50%; 
+        left: 50%;
+        animation: moving1 5s ease-in-out infinite;
     }
     .element-2 {
         position: absolute;
-        top: 75%;
-        left: 20%; 
+        top: 60%;
+        left: 20%;
+        animation: moving2 5s ease-in-out infinite;
     }
     .element-3 {
         position: absolute;
-        top: 40%;
-        left: 10%; 
+        top: 20%;
+        left: 60%;
+        animation: moving3 5s ease-in-out infinite;
+        animation-delay: 1s;
     }
     .element-4 {
         position: absolute;
-        top: 60%;
-        left: 45%; 
+        top: 50%;
+        left: 25%;
+        animation: moving1 5s ease-in-out infinite;
     }
-    /* TODO:das ist mega hässlich !!! */
+    .container-header {
+        display: flex;
+        justify-content: center;
+    }
+    .contact-container-main {
+        opacity: 0; 
+        transition: opacity 0.5s ease-out; 
+        padding-top: 20%;
+        padding-bottom: 20%;
+    }
+    .contact-container-main.visible {
+        opacity: 1; 
+    }
+    @media (max-width: 720px) {
+        .contact-container {
+        display: flex;
+        flex-direction: column;
+        }
+        .middel {
+            padding-top: 50px;
+            width: 100%;
+        }
+        table td {
+            display: block; 
+            text-align: center; 
+        }
+        table tr {
+            display: table-row; 
+        }
+        .left, .right {
+            width: 100%;
+            height: 200px;
+        }
+        .element-1 {
+        animation: moving1 5s ease-in-out infinite;
+        }
+        .element-2 {
+            animation: moving2 5s ease-in-out infinite;
+        }
+        .element-3 {
+            animation: moving3 5s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        .element-4 {
+            animation: moving1 5s ease-in-out infinite;
+        }
+    }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.contact-container-main');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    container.classList.add('visible');
+                } else {
+                    container.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.7
+        });
+
+        observer.observe(container);
+    });
+</script>
